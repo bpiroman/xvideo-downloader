@@ -31,7 +31,7 @@ function fetchVideo(url) {
     return new Promise((resolve, reject) => {
         // This is where you'd make an actual API call or use a service like:
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", "ynwCe2lrrXWpIENrM85cHsyPl?video_url=" + encodeURIComponent(url));
+        xhr.open("GET", "API_KEY?video_url=" + encodeURIComponent(url));
         xhr.onload = function() {
             if (xhr.status === 200) {
                 let response = JSON.parse(xhr.responseText);
