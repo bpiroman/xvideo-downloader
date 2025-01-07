@@ -30,20 +30,20 @@ function fetchVideo(url) {
     // For this example, we'll simulate this process:
     return new Promise((resolve, reject) => {
         // This is where you'd make an actual API call or use a service like:
-        // let xhr = new XMLHttpRequest();
-        // xhr.open("GET", "API_ENDPOINT?video_url=" + encodeURIComponent(url));
-        // xhr.onload = function() {
-        //     if (xhr.status === 200) {
-        //         let response = JSON.parse(xhr.responseText);
-        //         resolve(response.downloadURL);
-        //     } else {
-        //         reject('Error fetching video URL');
-        //     }
-        // };
-        // xhr.onerror = () => reject('Network error');
-        // xhr.send();
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "ynwCe2lrrXWpIENrM85cHsyPl?video_url=" + encodeURIComponent(url));
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                let response = JSON.parse(xhr.responseText);
+                resolve(response.downloadURL);
+            } else {
+                reject('Error fetching video URL');
+            }
+        };
+        xhr.onerror = () => reject('Network error');
+        xhr.send();
         
         // Instead, we're returning a dummy URL:
-        setTimeout(() => resolve('dummy-video-url.mp4'), 1000);  // Simulating API response delay
+        // setTimeout(() => resolve('dummy-video-url.mp4'), 1000);  // Simulating API response delay
     });
 }
